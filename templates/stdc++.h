@@ -1,6 +1,6 @@
 // C++ includes used for precompiling -*- C++ -*-
 
-// Copyright (C) 2003-2013 Free Software Foundation, Inc.
+// Copyright (C) 2003-2021 Free Software Foundation, Inc.
 //
 // This file is part of the GNU ISO C++ Library.  This library is free
 // software; you can redistribute it and/or modify it under the
@@ -26,9 +26,9 @@
  *  This is an implementation file for a precompiled header.
  */
 
- // 17.4.1.2 Headers
+// 17.4.1.2 Headers
 
- // C
+// C
 #ifndef _GLIBCXX_NO_ASSERT
 #include <cassert>
 #endif
@@ -47,16 +47,18 @@
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+#include <cwchar>
+#include <cwctype>
 
 #if __cplusplus >= 201103L
 #include <ccomplex>
 #include <cfenv>
 #include <cinttypes>
+#include <cstdalign>
 #include <cstdbool>
 #include <cstdint>
 #include <ctgmath>
-#include <cwchar>
-#include <cwctype>
+#include <cuchar>
 #endif
 
 // C++
@@ -97,6 +99,7 @@
 #include <array>
 #include <atomic>
 #include <chrono>
+#include <codecvt>
 #include <condition_variable>
 #include <forward_list>
 #include <future>
@@ -113,4 +116,38 @@
 #include <type_traits>
 #include <unordered_map>
 #include <unordered_set>
+#endif
+
+#if __cplusplus >= 201402L
+#include <shared_mutex>
+#endif
+
+#if __cplusplus >= 201703L
+#include <any>
+#include <charconv>
+// #include <execution>
+#include <filesystem>
+#include <optional>
+#include <memory_resource>
+#include <string_view>
+#include <variant>
+#endif
+
+#if __cplusplus > 201703L
+#include <barrier>
+#include <bit>
+#include <compare>
+#include <concepts>
+#if __cpp_impl_coroutine
+# include <coroutine>
+#endif
+#include <latch>
+#include <numbers>
+#include <ranges>
+#include <span>
+#include <stop_token>
+#include <semaphore>
+#include <source_location>
+#include <syncstream>
+#include <version>
 #endif
